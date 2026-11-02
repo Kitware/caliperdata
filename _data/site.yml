@@ -1,8 +1,13 @@
 brand:
   logo:
-    src_reversed: "" # Optional light logo for dark hero
-    src: "" # Optional dark logo for fixed header
-    alt: Sample Site
+    # =============================================
+    # "src_reversed" is for light logo on dark hero
+    # "src" is for dark logo on light hero
+    # =============================================
+    src_reversed: ""
+    src: ""
+    alt: CALIPeR
+
 cta:
   button:
     label: Contact
