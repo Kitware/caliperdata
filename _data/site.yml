@@ -11,7 +11,7 @@ brand:
 cta:
   button:
     label: Contact
-    url: "#overview"
+    url: "#"
 navigation:
   - label: Overview
     url: "#overview"
@@ -19,6 +19,8 @@ navigation:
     url: "#difference"
   - label: Releases
     url: "#releases"
+  - label: Citation
+    url: "#citation"
 footer:
   disclaimer: "" # Optional HTML notice
   organization: Kitware, Inc.
