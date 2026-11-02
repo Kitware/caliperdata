@@ -55,5 +55,25 @@ overview:
       label: Biometric indoor enrollment
     - label: 1-year apart longitudinal collects across varying physical/weather conditions
 
+# ==================================================
+# THE DIFFERENCE
+# ==================================================
+difference:
+  subheadline: What makes it different?
+  headline: Largest Open Long-Range Person Recognition dataset
+  items:
+    - title: Observations out to one kilometer
+      text: Ground cameras record people at multiple standoff distances up to 1,000 m, providing real observations of the image degradation encountered in long-range recognition.
+    - title: Multiple viewpoints of the same activity
+      text: Ground and elevated cameras provide near-simultaneous views of a participant's activity within a collection site, including elevated observations at depression angles up to 43°. 
+    - title: Enrollment beyond a single photograph
+      text: Controlled indoor enrollment includes face photographs, whole-body imagery, gait video, and depth scans alongside each participant's field observations. 
+    - title: Clothing changes and a year between captures
+      text: Both collections were designed to capture participants in two outfits, with 39 people returning for field recordings one year later.
+    - title: Sensor profiles for controlled simulation
+      text: Camera profiles combine sensor specifications with modeling parameters for camera jitter, radial lens distortion, optical aberrations, and detector noise. These settings support controlled studies of imaging degradation and can be used to configure physics-based simulators like <a href="https://github.com/Kitware/pybsm" target=_blank">pybsm</a>.
+    - title: Cleaner background class
+      text: 8km ship-free radius ensures quieter ambient samples for the background class
+
 
 ---
