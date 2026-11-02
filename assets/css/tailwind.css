@@ -61,7 +61,7 @@
 }
 
 @utility site-container {
-  @apply mx-auto w-full max-w-5xl px-6 lg:px-8;
+  @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
 }
 
 @utility section-description {
