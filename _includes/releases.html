@@ -16,14 +16,7 @@
         {% if page.releases.data %}
         <div class="gap-6 grid grid-cols-1 md:grid-cols-2 mt-18">
             {% for item in page.releases.data %}
-            <article class="card card-side bg-base-100 border border-base-300 shadow-lg">
-                <figure>
-                    <img
-                        src="{{ item.image.src | escape }}"
-                        alt="{{ item.image.alt | escape }}"
-                        class="aspect-video w-full object-cover"
-                    />
-                </figure>
+            <article class="card bg-base-100 border border-base-300 shadow-lg">
                 <div class="card-body space-y-4">
                     <h3 class="card-title">{{ item.title | escape }}</h3>
                     <p>{{ item.text | escape }}</p>
@@ -45,6 +38,13 @@
                         {% endif %}
                     </div>
                 </div>
+                <figure class="px-10 pb-10">
+                    <img
+                        src="{{ item.image.src | escape }}"
+                        alt="{{ item.image.alt | escape }}"
+                        class="w-full"
+                    />
+                </figure>
             </article>
             {% endfor %}
         </div>

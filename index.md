@@ -6,13 +6,16 @@ layout: home
 # Button styles: btn-primary or btn-outline
 # ==================================================
 hero:
-  # Replace this path with the final hero image in assets/images.
+  # Replace image paths with the final hero image in assets/images.
+  # background_image is faded into background
+  # feature_image is on the right side in the foreground.
   background_image: ""
+  feature_image: "/assets/images/Banner_Image.png"
   subheadline: Open Benchmark. Long Range Person Recognition
   headline: >-
     CALIPeR: Co-Temporal Atmospheric Long-range Imagery for Person Re-identification
   text: >-
-    Explore person recognition across distance, viewpoint, clothing, and time. The dataset features over 1,100 hours of multi-view, co-temporal field recordings alongside controlled indoor biometric captures—covering face, body, and gait—collected under a structured enrollment protocol. 
+    Explore person recognition across distance, viewpoint, clothing, and time. The dataset features over 1,100 hours of multi-view, co-temporal field recordings alongside controlled indoor biometric captures—covering face, body, and gait—collected under a structured enrollment protocol.
   buttons:
     - label: Button 1
       url: "#overview"
@@ -48,10 +51,12 @@ overview:
       label: Annotated frames@30fps
     - value: "411"
       label: Unique subjects with clothing changes
-    - label: Co-Temporal, cross-range Ground and Aerial view Outdoor collects with camera sensor calibration profiles
+    - value: "9"
+      label: Co-Temporal, cross-range Ground and Aerial view Outdoor camera sources
     - value: "5-station"
       label: Biometric indoor enrollment
-    - label: 1-year apart longitudinal collects across varying physical/weather conditions
+    - value: "1-year apart"
+      label: Longitudinal collects at the same location across varying physical/weather conditions
 
 # ==================================================
 # THE DIFFERENCE
@@ -63,15 +68,13 @@ difference:
     - title: Observations out to one kilometer
       text: Ground cameras record people at multiple standoff distances up to 1,000 m, providing real observations of the image degradation encountered in long-range recognition.
     - title: Multiple viewpoints of the same activity
-      text: Ground and elevated cameras provide near-simultaneous views of a participant's activity within a collection site, including elevated observations at depression angles up to 43°. 
+      text: Ground and elevated cameras provide near-simultaneous views of a participant's activity within a collection site, including elevated observations at depression angles up to 43°.
     - title: Enrollment beyond a single photograph
-      text: Controlled indoor enrollment includes face photographs, whole-body imagery, gait video, and depth scans alongside each participant's field observations. 
+      text: Controlled indoor enrollment includes face photographs, whole-body imagery, gait video, and depth scans alongside each participant's field observations.
     - title: Clothing changes and a year between captures
       text: Both collections were designed to capture participants in two outfits, with 39 people returning for field recordings one year later.
     - title: Sensor profiles for controlled simulation
       text: Camera profiles combine sensor specifications with modeling parameters for camera jitter, radial lens distortion, optical aberrations, and detector noise. These settings support controlled studies of imaging degradation and can be used to configure physics-based simulators like <a href="https://github.com/Kitware/pybsm" target=_blank">pybsm</a>.
-    - title: Cleaner background class
-      text: 8km ship-free radius ensures quieter ambient samples for the background class
 
 # ==================================================
 # RELEASES
@@ -81,13 +84,27 @@ releases:
   headline: The Dataset
   paragraphs:
     - >-
-      <strong>CALIPeR is planned for release in four stages:</strong> ground camera data, elevated data in two parts, and indoor enrollment data. Each stage will have its own release information, including download links, version, package size, contents, and usage terms. Dates and the camera coverage of each elevated part are pending.
+      <strong>CALIPeR is planned for release in six parts:</strong> ground camera data, elevated camera data, and indoor enrollment data, each split into part 1 for collect-1 and part 2 for collect-2. Each part will have its own release information, including download links, version, package size, contents, and usage terms. Release dates and detailed package coverage are pending.
   data:
-    - title: Ground Camera Data
+    - title: Ground Camera Data - Part 1
       text: >-
-        Ground-camera observations span multiple distances for studying recognition at long range.
+        Ground-camera data from collect-1 provide observations of participants at multiple distances for studying long-range recognition.
       image:
-        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        src: "/assets/images/ground_range-collect_1.png"
+        alt: Image needed
+      metadata:
+        - icon: ri-time-line
+          text: "To be released"
+      button:
+        text: Get Data
+        url: "#"
+        target: "_blank"
+
+    - title: Ground Camera Data - Part 2
+      text: >-
+        Ground-camera data from collect-2 provide observations of participants at multiple distances for studying long-range recognition.
+      image:
+        src: "/assets/images/ground_range-collect_2.png"
         alt: Image needed
       metadata:
         - icon: ri-time-line
@@ -99,9 +116,9 @@ releases:
 
     - title: Elevated Camera Data - Part 1
       text: >-
-        Elevated cameras observe participants from downward-looking viewpoints from collect 1.
+        Elevated-camera data from collect-1 provide observations of participants from downward-looking viewpoints for studying recognition across viewing angles.
       image:
-        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        src: "/assets/images/elevated-collect1.png"
         alt: Image needed
       metadata:
         - icon: ri-time-line
@@ -113,9 +130,9 @@ releases:
 
     - title: Elevated Camera Data - Part 2
       text: >-
-        Elevated cameras observe participants from downward-looking viewpoints from collect-2.
+        Elevated-camera data from collect-2 provide observations of participants from downward-looking viewpoints for studying recognition across viewing angles.
       image:
-        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        src: "/assets/images/elevated-collect2.png"
         alt: Image needed
       metadata:
         - icon: ri-time-line
@@ -125,11 +142,25 @@ releases:
         url: "#"
         target: "_blank"
 
-    - title: Indoor Enrollment Data
+    - title: Indoor Enrollment Data - Part 1
       text: >-
-        Face, whole-body, gait, and depth observations provide close-up views of subjects under controlled conditions.
+        Indoor enrollment data from collect-1 provide face, whole-body, gait, and depth observations of participants under controlled conditions.
       image:
-        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        src: "/assets/images/indoor_enrollment-collect_1.png"
+        alt: Image needed
+      metadata:
+        - icon: ri-time-line
+          text: "To be released"
+      button:
+        text: Get Data
+        url: "#"
+        target: "_blank"
+
+    - title: Indoor Enrollment Data - Part 2
+      text: >-
+        Indoor enrollment data from collect-2 provide face, whole-body, gait, and depth observations of participants under controlled conditions.
+      image:
+        src: "/assets/images/indoor_enrollment-collect_2.png"
         alt: Image needed
       metadata:
         - icon: ri-time-line
@@ -148,7 +179,7 @@ releases:
     button:
       text: View on GitHub
       icon: ri-github-line
-      url: "#"
+      url: "https://github.com/Kitware/CALIPeR-Experiments"
       target: "_blank"
 
 

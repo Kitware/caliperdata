@@ -1687,6 +1687,9 @@
   .mt-7 {
     margin-top: calc(var(--spacing) * 7);
   }
+  .mt-8 {
+    margin-top: calc(var(--spacing) * 8);
+  }
   .mt-9 {
     margin-top: calc(var(--spacing) * 9);
   }
@@ -2237,6 +2240,9 @@
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
   .py-5 {
     padding-block: calc(var(--spacing) * 5);
   }
@@ -2260,6 +2266,9 @@
   }
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
+  }
+  .pb-10 {
+    padding-bottom: calc(var(--spacing) * 10);
   }
   .pb-40 {
     padding-bottom: calc(var(--spacing) * 40);
@@ -2525,6 +2534,12 @@
     .md\:grid-cols-\[repeat\(var\(--navigation-count\)\,minmax\(0\,1fr\)\)\] {
       grid-template-columns: repeat(var(--navigation-count),minmax(0,1fr));
     }
+    .md\:flex-nowrap {
+      flex-wrap: nowrap;
+    }
+    .md\:justify-between {
+      justify-content: space-between;
+    }
     .md\:overflow-visible {
       overflow: visible;
     }
@@ -2548,6 +2563,9 @@
     }
   }
   @media (width >= 64rem) {
+    .lg\:mt-0 {
+      margin-top: 0px;
+    }
     .lg\:flex {
       display: flex;
     }
