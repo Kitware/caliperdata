@@ -1,0 +1,79 @@
+<section id="releases" class="py-20 md:py-28">
+    <div class="site-container">
+        <div class="section-description">
+            {% if page.releases.subheadline %}
+            <p class="section-eyebrow">{{ page.releases.subheadline | escape }}</p>
+            {% endif %}
+            <h2 class="section-title">{{ page.releases.headline | escape }}</h2>
+            {% if page.releases.paragraphs %}
+            <div class="prose mt-7 max-w-none text-base-content/70">
+            {% for paragraph in page.releases.paragraphs %}
+                {{ paragraph | markdownify }}
+            {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        {% if page.releases.data %}
+        <div class="gap-6 grid grid-cols-1 md:grid-cols-2 mt-18">
+            {% for item in page.releases.data %}
+            <article class="card bg-base-100 border border-base-300 shadow-lg">
+                <figure>
+                    <img
+                        src="{{ item.image.src | escape }}"
+                        alt="{{ item.image.alt | escape }}"
+                        class="aspect-video w-full object-cover"
+                    />
+                </figure>
+                <div class="card-body space-y-4">
+                    <h3 class="card-title">{{ item.title | escape }}</h3>
+                    <p>{{ item.text | escape }}</p>
+                    <div class="card-actions justify-between items-center">
+                        {% if item.metadata %}
+                        <div class="flex flex-wrap items-start">
+                            {% for metadata in item.metadata %}
+                            <span class="badge badge-warning badge-outline">
+                                <i class="{{ metadata.icon | escape }}"></i>
+                                {{ metadata.text | escape }}
+                            </span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% if item.button %}
+                        <a class="btn btn-secondary" href="{{ item.button.url | escape }}" {% if item.button.target %}target="{{ item.button.target | escape }}"{% endif %}>
+                            {{ item.button.text | escape }}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if page.releases.code %}
+        <article class="card bg-base-100 border border-base-300 shadow-lg mt-12">
+            <div class="card-body space-y-4">
+                <h3 class="card-title">{{ page.releases.code.title | escape }}</h3>
+                <p>{{ page.releases.code.text | escape }}</p>
+                <div class="card-actions justify-between items-center">
+                    {% if page.releases.code.metadata %}
+                    <div class="flex flex-wrap items-start">
+                        {% for metadata in page.releases.code.metadata %}
+                        <span class="badge badge-warning badge-outline">
+                            <i class="{{ metadata.icon | escape }}"></i>
+                            {{ metadata.text | escape }}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% if page.releases.code.button %}
+                    <a class="btn btn-secondary" href="{{ page.releases.code.button.url | escape }}" {% if page.releases.code.button.target %}target="{{ page.releases.code.button.target | escape }}"{% endif %}>
+                        <i class="{{ page.releases.code.button.icon | escape }} text-lg font-normal"></i>
+                        {{ page.releases.code.button.text | escape }}
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </article>
+        {% endif %}
+    </div>
+</section>

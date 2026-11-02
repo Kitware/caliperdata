@@ -17,6 +17,8 @@ navigation:
     url: "#overview"
   - label: Difference
     url: "#difference"
+  - label: Releases
+    url: "#releases"
 footer:
   disclaimer: "" # Optional HTML notice
   organization: Kitware, Inc.

@@ -75,5 +75,83 @@ difference:
     - title: Cleaner background class
       text: 8km ship-free radius ensures quieter ambient samples for the background class
 
+# ==================================================
+# RELEASES
+# ==================================================
+releases:
+  subheadline: Test
+  headline: Test
+  paragraphs:
+    - >-
+      <strong>CALIPeR is planned for release in four stages:</strong> ground camera data, elevated data in two parts, and indoor enrollment data. Each stage will have its own release information, including download links, version, package size, contents, and usage terms. Dates and the camera coverage of each elevated part are pending.
+  data:
+    - title: Ground Camera Data
+      text: >-
+        Ground-camera observations span multiple distances for studying recognition at long range.
+      image:
+        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        alt: Image needed
+      metadata:
+        - icon: ri-time-line
+          text: "To be released"
+      button:
+        text: Get Data
+        url: "#"
+        target: "_blank"
+
+    - title: Elevated Camera Data - Part 1
+      text: >-
+        Elevated cameras observe participants from downward-looking viewpoints from collect 1.
+      image:
+        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        alt: Image needed
+      metadata:
+        - icon: ri-time-line
+          text: "To be released"
+      button:
+        text: Get Data
+        url: "#"
+        target: "_blank"
+
+    - title: Elevated Camera Data - Part 2
+      text: >-
+        Elevated cameras observe participants from downward-looking viewpoints from collect-2.
+      image:
+        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        alt: Image needed
+      metadata:
+        - icon: ri-time-line
+          text: "To be released"
+      button:
+        text: Get Data
+        url: "#"
+        target: "_blank"
+
+    - title: Indoor Enrollment Data
+      text: >-
+        Face, whole-body, gait, and depth observations provide close-up views of subjects under controlled conditions.
+      image:
+        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        alt: Image needed
+      metadata:
+        - icon: ri-time-line
+          text: "To be released"
+      button:
+        text: Get Data
+        url: "#"
+        target: "_blank"
+  code:
+    title: Paper Benchmark Code
+    text: >-
+      A companion GitHub repository is planned for the paper's benchmarking code. This repo includes evaluation protocols, split manifests, baseline configurations, and documentation for the ReID and synthetic imagery experiments. Camera profiles and simulation settings support studies of atmospheric, sensor, and optical degradation.
+    metadata:
+      - icon: ri-time-line
+        text: "Repository Status: To be released"
+    button:
+      text: View on GitHub
+      icon: ri-github-line
+      url: "#"
+      target: "_blank"
+
 
 ---
