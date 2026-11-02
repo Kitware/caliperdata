@@ -1,7 +1,5 @@
 ---
 layout: home
-title: Sample Site
-description: Site description here
 
 # ==================================================
 # HERO AREA
