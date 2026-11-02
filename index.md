@@ -17,10 +17,10 @@ hero:
   text: >-
     Explore person recognition across distance, viewpoint, clothing, and time. The dataset features over 1,100 hours of multi-view, co-temporal field recordings alongside controlled indoor biometric captures—covering face, body, and gait—collected under a structured enrollment protocol.
   buttons:
-    - label: Button 1
-      url: "#overview"
+    - label: Browse releases
+      url: "#releases"
       style: btn-secondary
-    - label: Button 2
+    - label: Read the overview
       url: "#overview"
       style: btn-outline
 
