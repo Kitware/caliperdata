@@ -79,8 +79,8 @@ difference:
 # RELEASES
 # ==================================================
 releases:
-  subheadline: Test
-  headline: Test
+  subheadline: Data and Code Releases
+  headline: The Dataset
   paragraphs:
     - >-
       <strong>CALIPeR is planned for release in four stages:</strong> ground camera data, elevated data in two parts, and indoor enrollment data. Each stage will have its own release information, including download links, version, package size, contents, and usage terms. Dates and the camera coverage of each elevated part are pending.
