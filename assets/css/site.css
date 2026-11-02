@@ -25,11 +25,13 @@
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --font-weight-light: 300;
+    --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
     --tracking-tight: -0.025em;
     --leading-tight: 1.25;
     --leading-normal: 1.5;
+    --aspect-video: 16 / 9;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -854,6 +856,104 @@
     }
   }
   @layer daisyui.l1.l2.l3 {
+    .card-body {
+      display: flex;
+      flex: auto;
+      flex-direction: column;
+      gap: calc(0.25rem * 2);
+      padding: var(--card-p, 1.5rem);
+      font-size: var(--card-fs, 0.875rem);
+    }
+  }
+  @layer daisyui.l1.l2.l3.l4 {
+    .card-body p {
+      flex-grow: 1;
+    }
+  }
+  @layer daisyui.l1.l2 {
+    .image-full > .card-body {
+      position: relative;
+      color: var(--color-neutral-content);
+    }
+    .card-xs .card-body {
+      --card-p: 0.5rem;
+      --card-fs: 0.6875rem;
+    }
+    .card-sm .card-body {
+      --card-p: 1rem;
+      --card-fs: 0.75rem;
+    }
+    .card-md .card-body {
+      --card-p: 1.5rem;
+      --card-fs: 0.875rem;
+    }
+    .card-lg .card-body {
+      --card-p: 2rem;
+      --card-fs: 1rem;
+    }
+    .card-xl .card-body {
+      --card-p: 2.5rem;
+      --card-fs: 1.125rem;
+    }
+  }
+  @layer daisyui.l1.l2.l3 {
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: var(--radius-box);
+      transition: outline 0.2s ease-in-out;
+      outline: 2px solid #0000;
+      outline-offset: 2px;
+    }
+    .card:focus-visible {
+      outline-color: currentColor;
+    }
+    .card[aria-checked="true"] {
+      outline-color: currentColor;
+    }
+    .card:has( > :checked,  > :is([type="checkbox"], [type="radio"]):focus-visible) {
+      outline-color: currentColor;
+    }
+    .card:has( > :checked:focus-visible) {
+      outline-width: 4px;
+    }
+    .card[aria-checked="true"]:focus-visible {
+      outline-width: 4px;
+    }
+    .card[aria-checked="true"]:has( > :is([type="checkbox"], [type="radio"]):focus-visible) {
+      outline-width: 4px;
+    }
+    .card:has( > :is([type="checkbox"], [type="radio"])) {
+      cursor: pointer;
+      user-select: none;
+    }
+    .card > :is([type="checkbox"], [type="radio"]) {
+      appearance: none;
+    }
+  }
+  @layer daisyui.l1.l2.l3.l4 {
+    .card figure:first-child {
+      overflow: hidden;
+      border-start-start-radius: inherit;
+      border-start-end-radius: inherit;
+      border-end-start-radius: unset;
+      border-end-end-radius: unset;
+    }
+    .card figure:last-child {
+      overflow: hidden;
+      border-start-start-radius: unset;
+      border-start-end-radius: unset;
+      border-end-start-radius: inherit;
+      border-end-end-radius: inherit;
+    }
+    .card figure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  @layer daisyui.l1.l2.l3 {
     .stats {
       position: relative;
       display: inline-grid;
@@ -952,6 +1052,45 @@
     margin-inline: auto;
   }
   @layer daisyui.l1.l2.l3 {
+    .\!label {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: calc(0.25rem * 1.5) !important;
+      white-space: nowrap !important;
+      color: currentcolor !important;
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .\!label {
+        color: color-mix(in oklab, currentcolor 60%, transparent) !important;
+      }
+    }
+    .\!label:has(input) {
+      cursor: pointer !important;
+    }
+    .\!label:is(.input > *, .select > *) {
+      display: flex !important;
+      height: calc(100% - 0.5rem) !important;
+      align-items: center !important;
+      padding-inline: calc(0.25rem * 3) !important;
+      white-space: nowrap !important;
+      font-size: inherit !important;
+    }
+    .\!label:is(.input > *, .select > *):first-child {
+      margin-inline-start: calc(0.25rem * -3) !important;
+      margin-inline-end: calc(0.25rem * 3) !important;
+      border-inline-end: var(--border) solid currentColor !important;
+      @supports (color: color-mix(in lab, red, red)) {
+        border-inline-end: var(--border) solid color-mix(in oklab, currentColor 10%, #0000) !important;
+      }
+    }
+    .\!label:is(.input > *, .select > *):last-child {
+      margin-inline-start: calc(0.25rem * 3) !important;
+      margin-inline-end: calc(0.25rem * -3) !important;
+      border-inline-start: var(--border) solid currentColor !important;
+      @supports (color: color-mix(in lab, red, red)) {
+        border-inline-start: var(--border) solid color-mix(in oklab, currentColor 10%, #0000) !important;
+      }
+    }
     .label {
       display: inline-flex;
       align-items: center;
@@ -1382,6 +1521,9 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
   }
@@ -1390,6 +1532,23 @@
   }
   .mt-9 {
     margin-top: calc(var(--spacing) * 9);
+  }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
+  .mt-18 {
+    margin-top: calc(var(--spacing) * 18);
+  }
+  .section-eyebrow {
+    margin-bottom: calc(var(--spacing) * 4);
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    --tw-tracking: 0.22em;
+    letter-spacing: 0.22em;
+    color: var(--color-primary);
+    text-transform: uppercase;
   }
   .mb-1 {
     margin-bottom: var(--spacing);
@@ -1401,6 +1560,27 @@
     margin-left: auto;
   }
   @layer daisyui.l1.l2.l3 {
+    .badge {
+      display: inline-flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      gap: calc(0.25rem * 2);
+      border-radius: var(--radius-selector);
+      vertical-align: middle;
+      color: var(--badge-fg);
+      border: var(--border) solid var(--badge-color, var(--color-base-200));
+      font-size: 0.875rem;
+      width: fit-content;
+      background-size: auto, calc(var(--noise) * 100%);
+      background-image: none, var(--fx-noise);
+      background-color: var(--badge-bg);
+      --badge-bg: var(--badge-color, var(--color-base-100));
+      --badge-fg: var(--color-base-content);
+      --size: calc(var(--size-selector, 0.25rem) * 6);
+      height: var(--size);
+      padding-inline: calc(var(--size) / 2 - var(--border));
+    }
     .footer {
       display: grid;
       width: 100%;
@@ -1456,6 +1636,38 @@
       .stats-vertical .stat:not(:last-child) {
         border-block-end: var(--border) dashed color-mix(in oklab, currentColor 10%, #0000);
       }
+    }
+  }
+  @layer daisyui.l1.l2.l3 {
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: calc(0.25rem * 2);
+    }
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: calc(0.25rem * 2);
+      font-size: var(--cardtitle-fs, 1.125rem);
+      font-weight: 600;
+    }
+  }
+  @layer daisyui.l1.l2 {
+    .card-xs .card-title {
+      --cardtitle-fs: 0.875rem;
+    }
+    .card-sm .card-title {
+      --cardtitle-fs: 1rem;
+    }
+    .card-md .card-title {
+      --cardtitle-fs: 1.125rem;
+    }
+    .card-lg .card-title {
+      --cardtitle-fs: 1.25rem;
+    }
+    .card-xl .card-title {
+      --cardtitle-fs: 1.375rem;
     }
   }
   :root .prose {
@@ -1524,6 +1736,9 @@
   .hidden {
     display: none;
   }
+  .aspect-video {
+    aspect-ratio: var(--aspect-video);
+  }
   @layer daisyui.l1.l2 {
     .btn-square {
       padding-inline: 0px;
@@ -1582,6 +1797,9 @@
   .max-w-xl {
     max-width: var(--container-xl);
   }
+  .section-description {
+    max-width: var(--container-2xl);
+  }
   .min-w-0 {
     min-width: 0px;
   }
@@ -1612,6 +1830,49 @@
       rotate: 45deg;
       translate: 0 1px;
     }
+  }
+  .scale-105 {
+    --tw-scale-x: 105%;
+    --tw-scale-y: 105%;
+    --tw-scale-z: 105%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  @layer daisyui.l1.l2.l3 {
+    .content-links a:not(.btn):not(.link-unstyled) {
+      cursor: pointer;
+      text-decoration-line: underline;
+    }
+    .content-links a:not(.btn):not(.link-unstyled):focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+    @media (forced-colors: active) {
+      .content-links a:not(.btn):not(.link-unstyled):focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+    }
+    .content-links a:not(.btn):not(.link-unstyled):focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+  }
+  @layer daisyui.l1.l2 {
+    @media (hover: hover) {
+      .content-links a:not(.btn):not(.link-unstyled):hover {
+        color: var(--color-secondary);
+      }
+      @supports (color: color-mix(in lab, red, red)) {
+        .content-links a:not(.btn):not(.link-unstyled):hover {
+          color: color-mix(in oklab, var(--color-secondary) 80%, #000);
+        }
+      }
+    }
+    .content-links a:not(.btn):not(.link-unstyled) {
+      color: var(--color-secondary);
+    }
+  }
+  @layer daisyui.l1.l2.l3 {
     .link {
       cursor: pointer;
       text-decoration-line: underline;
@@ -1643,6 +1904,9 @@
   .snap-start {
     scroll-snap-align: start;
   }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1655,6 +1919,9 @@
   .items-center {
     align-items: center;
   }
+  .items-start {
+    align-items: flex-start;
+  }
   .justify-between {
     justify-content: space-between;
   }
@@ -1664,11 +1931,24 @@
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
   .gap-14 {
     gap: calc(var(--spacing) * 14);
+  }
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-4 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
   }
   :where(.space-y-8 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
@@ -1706,6 +1986,18 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
+  .border-l {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 1px;
+  }
+  @layer daisyui.l1.l2 {
+    .badge-outline {
+      color: var(--badge-color);
+      --badge-bg: #0000;
+      background-image: none;
+      border-color: currentColor;
+    }
+  }
   .border-base-300 {
     border-color: var(--color-base-300);
   }
@@ -1720,6 +2012,9 @@
   }
   .bg-neutral {
     background-color: var(--color-neutral);
+  }
+  .bg-white {
+    background-color: var(--color-white);
   }
   @layer daisyui.l1.l2.l3 {
     .btn-outline {
@@ -1751,6 +2046,9 @@
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
+  }
+  .p-7 {
+    padding: calc(var(--spacing) * 7);
   }
   .px-0 {
     padding-inline: 0px;
@@ -1797,6 +2095,19 @@
   .font-serif {
     font-family: var(--font-serif);
   }
+  .section-title {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    --tw-tracking: var(--tracking-tight);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-neutral);
+    @media (width >= 48rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
@@ -1820,6 +2131,10 @@
   .text-\[0\.65rem\] {
     font-size: 0.65rem;
   }
+  .leading-6 {
+    --tw-leading: calc(var(--spacing) * 6);
+    line-height: calc(var(--spacing) * 6);
+  }
   .leading-8 {
     --tw-leading: calc(var(--spacing) * 8);
     line-height: calc(var(--spacing) * 8);
@@ -1839,6 +2154,10 @@
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
   }
   .tracking-\[0\.2em\] {
     --tw-tracking: 0.2em;
@@ -1884,6 +2203,12 @@
       color: color-mix(in oklab, var(--color-base-content) 50%, transparent);
     }
   }
+  .text-base-content\/65 {
+    color: var(--color-base-content);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-base-content) 65%, transparent);
+    }
+  }
   .text-base-content\/70 {
     color: var(--color-base-content);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1907,6 +2232,9 @@
   }
   .text-secondary {
     color: var(--color-secondary);
+  }
+  .text-success {
+    color: var(--color-success);
   }
   .text-white {
     color: var(--color-white);
@@ -1966,15 +2294,20 @@
       --btn-fg: var(--color-secondary-content);
       --btn-soft-bg: initial;
     }
-    .btn-sm {
-      --fontsize: 0.75rem;
-      --btn-p: 0.75rem;
-      --size: calc(var(--size-field, 0.25rem) * 8);
+    .badge-warning {
+      --badge-color: var(--color-warning);
+      --badge-fg: var(--color-warning-content);
     }
   }
   @layer daisyui.l1.l2.l3 {
+    .aura:has( > .checkbox,  > .toggle,  > .badge) {
+      --aura-radius: var(--radius-selector);
+    }
     .aura:has( > .btn,  > .input,  > .select) {
       --aura-radius: var(--radius-field);
+    }
+    .aura:has( > .card,  > .alert) {
+      --aura-radius: var(--radius-box);
     }
   }
   @media (hover: hover) {
@@ -2004,6 +2337,9 @@
     }
     .md\:min-w-0 {
       min-width: 0px;
+    }
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .md\:grid-cols-\[repeat\(var\(--navigation-count\)\,minmax\(0\,1fr\)\)\] {
       grid-template-columns: repeat(var(--navigation-count),minmax(0,1fr));
@@ -2039,6 +2375,9 @@
     }
     .lg\:w-2\/3 {
       width: calc(2 / 3 * 100%);
+    }
+    .lg\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .lg\:grid-cols-\[1\.3fr_1fr\] {
       grid-template-columns: 1.3fr 1fr;
@@ -2254,6 +2593,14 @@
     --noise: 0;
   }
 }
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -2268,6 +2615,21 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
 }
 @property --tw-scroll-snap-strictness {
   syntax: "*";
@@ -2285,14 +2647,6 @@
   initial-value: solid;
 }
 @property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-tracking {
   syntax: "*";
   inherits: false;
 }
@@ -2368,15 +2722,18 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-scroll-snap-strictness: proximity;
       --tw-space-y-reverse: 0;
       --tw-border-style: solid;
       --tw-leading: initial;
-      --tw-font-weight: initial;
-      --tw-tracking: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
