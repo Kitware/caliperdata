@@ -40,7 +40,7 @@
                 </div>
                 <figure class="px-10 pb-10">
                     <img
-                        src="{{ item.image.src | escape }}"
+                        src="{{ item.image.src | relative_url | escape }}"
                         alt="{{ item.image.alt | escape }}"
                         class="w-full"
                     />
