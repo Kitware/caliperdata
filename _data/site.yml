@@ -1,0 +1,15 @@
+brand:
+  logo:
+    src_reversed: "" # Optional light logo for dark hero
+    src: "" # Optional dark logo for fixed header
+    alt: Sample Site
+cta:
+  button:
+    label: Contact
+    url: "#overview"
+navigation:
+  - label: Overview
+    url: "#overview"
+footer:
+  disclaimer: "" # Optional HTML notice
+  organization: Kitware, Inc.

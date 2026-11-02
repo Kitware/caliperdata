@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@source "../../*.md";
+@source "../../*.html";
+@source "../../_layouts/**/*.html";
+@source "../../_includes/**/*.html";
+@source "../../assets/js/**/*.js";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+@plugin "daisyui/theme" {
+  name: "kwjekyll";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #ffffff;
+  --color-base-200: #f4f6f8;
+  --color-base-300: #dce2e8;
+  --color-base-content: #17202a;
+
+  --color-primary: #0875d1;
+  --color-primary-content: #ffffff;
+  --color-secondary: #3eae2b;
+  --color-secondary-content: #ffffff;
+  --color-accent: #30a8e8;
+  --color-accent-content: #031529;
+  --color-neutral: #031529;
+  --color-neutral-content: #ffffff;
+
+  --color-info: #0875d1;
+  --color-info-content: #ffffff;
+  --color-success: #4cc43b;
+  --color-success-content: #031529;
+  --color-warning: #f3b33d;
+  --color-warning-content: #031529;
+  --color-error: #dc4c64;
+  --color-error-content: #ffffff;
+
+  --radius-selector: 0rem;
+  --radius-field: 0rem;
+  --radius-box: 0rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  section[id] { scroll-margin-top: 4rem; }
+}
+
+/* Layout primitives, not another component or color system. */
+@utility site-container {
+  @apply mx-auto w-full max-w-5xl px-6 lg:px-8;
+}
+@utility section-pad {
+  @apply py-20 md:py-28;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
