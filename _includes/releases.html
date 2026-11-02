@@ -16,7 +16,7 @@
         {% if page.releases.data %}
         <div class="gap-6 grid grid-cols-1 md:grid-cols-2 mt-18">
             {% for item in page.releases.data %}
-            <article class="card bg-base-100 border border-base-300 shadow-lg">
+            <article class="card card-side bg-base-100 border border-base-300 shadow-lg">
                 <figure>
                     <img
                         src="{{ item.image.src | escape }}"
