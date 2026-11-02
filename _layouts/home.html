@@ -2,5 +2,9 @@
 layout: default
 ---
 {% if page.hero %}{% include hero.html %}{% endif %}
-{% if page.overview %}{% include overview.html %}{% endif %}
-{{ content }}
+<div class="content-links">
+    {% if page.overview %}{% include overview.html %}{% endif %}
+    {% if page.difference %}{% include difference.html %}{% endif %}
+    {% if page.releases %}{% include releases.html %}{% endif %}
+    {{ content }}
+</div>
