@@ -6,8 +6,11 @@ layout: home
 # Button styles: btn-primary or btn-outline
 # ==================================================
 hero:
-  # Replace this path with the final hero image in assets/images.
+  # Replace image paths with the final hero image in assets/images.
+  # background_image is faded into background
+  # feature_image is on the right side in the foreground.
   background_image: ""
+  feature_image: "/assets/images/Banner_Image.png"
   subheadline: Open Benchmark. Long Range Person Recognition
   headline: >-
     CALIPeR: Co-Temporal Atmospheric Long-range Imagery for Person Re-identification
