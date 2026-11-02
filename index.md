@@ -10,11 +10,11 @@ description: Site description here
 hero:
   # Replace this path with the final hero image in assets/images.
   background_image: ""
-  subheadline: Subheadline Content
+  subheadline: Open Benchmark. Long Range Person Recognition
   headline: >-
-    Main headline goes here
+    CALIPeR: Co-Temporal Atmospheric Long-range Imagery for Person Re-identification
   text: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius tellus a hendrerit sagittis. Nunc nunc eros, interdum tristique ultricies et, tristique ut quam. Sed aliquet sit amet risus in finibus. Nulla nec condimentum nibh, at finibus neque. In hac habitasse platea dictumst. Phasellus sagittis tempor massa, ac rhoncus arcu imperdiet nec. Vestibulum eu lorem vitae quam fermentum feugiat eu a sem. Etiam ultrices quis orci non hendrerit. Integer vulputate gravida tellus, ac volutpat urna malesuada vel.
+    Explore person recognition across distance, viewpoint, clothing, and time. The dataset features over 1,100 hours of multi-view, co-temporal field recordings alongside controlled indoor biometric captures—covering face, body, and gait—collected under a structured enrollment protocol. 
   buttons:
     - label: Button 1
       url: "#overview"
@@ -29,28 +29,31 @@ hero:
 # ==================================================
 overview:
   subheadline: Overview
-  headline: Overview Heading
+  headline: Built to study person recognition across distance, viewpoint and changing environmental/physical conditions.
   paragraphs:
     - >-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius tellus a hendrerit sagittis. Nunc nunc eros, interdum tristique ultricies et, tristique ut quam. Sed aliquet sit amet risus in finibus. Nulla nec condimentum nibh, at finibus neque. In hac habitasse platea dictumst. Phasellus sagittis tempor massa, ac rhoncus arcu imperdiet nec. Vestibulum eu lorem vitae quam fermentum feugiat eu a sem. Etiam ultrices quis orci non hendrerit. Integer vulputate gravida tellus, ac volutpat urna malesuada vel.
+      CALIPeR combines two collects, captured a year apart, containing outdoor video from ground and elevated cameras with controlled face and whole-body images, gait videos, and depth scans. Its near-simultaneous views capture the same person and activity from multiple distances and angles, upto ground-camera ranges reaching 1,000 m.
   cta_section:
     paragraphs:
       - >-
-        <strong>Call to action</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius tellus a hendrerit sagittis. Nunc nunc eros, interdum tristique ultricies et, tristique ut quam.
+        <strong>The paper</strong> describes the dataset and evaluation protocols, reports baseline results, and explores ground-camera calibration and the use of simulated imagery for recognition research.
     buttons:
-      - label: CTA Button
+      - label: Read the paper
         url: "#"
         target: _blank
         style: primary
 
   stats:
-    - value: "X,XXX"
-      label: Lorem Ipsum
-    - value: "X,XXX"
-      label: Lorem Ipsum
-    - value: "XX"
-      label: Lorem Ipsum
-    - value: "X.XM"
-      label: Lorem Ipsum
+    - value: ">1,100"
+      label: Raw video hours
+    - value: "~53M"
+      label: Annotated frames@30fps
+    - value: "411"
+      label: Unique subjects with clothing changes
+    - label: Co-Temporal, cross-range Ground and Aerial view Outdoor collects with camera sensor calibration profiles
+    - value: "5-station"
+      label: Biometric indoor enrollment
+    - label: 1-year apart longitudinal collects across varying physical/weather conditions
+
 
 ---
