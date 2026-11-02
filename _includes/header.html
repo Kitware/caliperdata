@@ -17,7 +17,7 @@
     <div class="ml-auto flex shrink-0 items-center gap-2">
       <details class="dropdown dropdown-end xl:hidden">
         <summary class="btn btn-ghost btn-square text-neutral" aria-label="Open navigation">
-          <i class="ri-menu-line font-lg text-neutral"></i>
+          <i class="ri-menu-line font-lg text-neutral font-normal"></i>
         </summary>
         <ul class="menu dropdown-content z-[1] mt-3 w-56 border border-base-300 bg-base-100 p-2 text-neutral shadow-lg">
           {% for item in site.data.site.navigation %}<li><a href="{{ item.url }}">{{ item.label | escape }}</a></li>{% endfor %}
