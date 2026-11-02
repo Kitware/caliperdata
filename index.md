@@ -90,7 +90,7 @@ releases:
       text: >-
         Ground-camera data from collect-1 provide observations of participants at multiple distances for studying long-range recognition.
       image:
-        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        src: "/assets/images/ground_range-collect_1.png"
         alt: Image needed
       metadata:
         - icon: ri-time-line
@@ -104,7 +104,7 @@ releases:
       text: >-
         Ground-camera data from collect-2 provide observations of participants at multiple distances for studying long-range recognition.
       image:
-        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        src: "/assets/images/ground_range-collect_2.png"
         alt: Image needed
       metadata:
         - icon: ri-time-line
@@ -118,7 +118,7 @@ releases:
       text: >-
         Elevated-camera data from collect-1 provide observations of participants from downward-looking viewpoints for studying recognition across viewing angles.
       image:
-        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        src: "/assets/images/elevated-collect1.png"
         alt: Image needed
       metadata:
         - icon: ri-time-line
@@ -132,7 +132,7 @@ releases:
       text: >-
         Elevated-camera data from collect-2 provide observations of participants from downward-looking viewpoints for studying recognition across viewing angles.
       image:
-        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        src: "/assets/images/elevated-collect2.png"
         alt: Image needed
       metadata:
         - icon: ri-time-line
@@ -146,7 +146,7 @@ releases:
       text: >-
         Indoor enrollment data from collect-1 provide face, whole-body, gait, and depth observations of participants under controlled conditions.
       image:
-        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        src: "/assets/images/indoor_enrollment-collect_1.png"
         alt: Image needed
       metadata:
         - icon: ri-time-line
@@ -160,7 +160,7 @@ releases:
       text: >-
         Indoor enrollment data from collect-2 provide face, whole-body, gait, and depth observations of participants under controlled conditions.
       image:
-        src: "https://plus.unsplash.com/premium_photo-1749724692055-396120163730?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+        src: "/assets/images/indoor_enrollment-collect_2.png"
         alt: Image needed
       metadata:
         - icon: ri-time-line
