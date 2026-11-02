@@ -1,6 +1,6 @@
 <section id="overview" class="py-20 md:py-28">
   <div class="site-container grid gap-14 lg:grid-cols-[1.3fr_1fr] lg:items-start">
-    <div>
+    <div class="section-description">
       {% if page.overview.subheadline %}
         <p class="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-primary">{{ page.overview.subheadline | escape }}</p>
       {% endif %}
@@ -18,7 +18,7 @@
               {% if page.overview.cta_section.buttons %}
                 <div class="mt-6 flex flex-wrap gap-3">
                   {% for button in page.overview.cta_section.buttons %}
-                    <a class="btn btn-sm rounded-none{% if button.style == 'primary' %} btn-primary{% else %} btn-outline{% endif %}" href="{{ button.url }}" target="{{ button.target }}">
+                    <a class="btn rounded-none{% if button.style == 'primary' %} btn-primary{% else %} btn-outline{% endif %}" href="{{ button.url }}" target="{{ button.target }}">
                       {{ button.label | escape }}
                     </a>
                   {% endfor %}
