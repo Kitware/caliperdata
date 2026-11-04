@@ -32,7 +32,7 @@
                         </div>
                         {% endif %}
                         {% if item.button %}
-                        <a class="btn btn-secondary" href="{{ item.button.url | escape }}" {% if item.button.target %}target="{{ item.button.target | escape }}"{% endif %}>
+                        <a class="btn btn-secondary btn-disabled cursor-not-allowed" href="{{ item.button.url | escape }}" {% if item.button.target %}target="{{ item.button.target | escape }}"{% endif %}>
                             {{ item.button.text | escape }}
                         </a>
                         {% endif %}

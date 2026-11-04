@@ -16,12 +16,13 @@
                 {{ paragraph | markdownify }}
               {% endfor %}
               {% if page.overview.cta_section.buttons %}
-                <div class="mt-6 flex flex-wrap gap-3">
+                <div class="mt-6 flex items-center gap-3">
                   {% for button in page.overview.cta_section.buttons %}
-                    <a class="btn rounded-none{% if button.style == 'primary' %} btn-primary{% else %} btn-outline{% endif %}" href="{{ button.url }}" target="{{ button.target }}">
+                    <a class="btn btn-disabled cursor-not-allowed rounded-none{% if button.style == 'primary' %} btn-primary{% else %} btn-outline{% endif %}" href="{{ button.url }}" target="{{ button.target }}">
                       {{ button.label | escape }}
                     </a>
                   {% endfor %}
+                  <span class="mt-4 text-gray-500">Coming Soon</span>
                 </div>
               {% endif %}
             </div>

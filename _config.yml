@@ -1,6 +1,6 @@
 title: CALIPeR
 description: Site description
-url: ""
+url: "https://caliperdata.org"
 baseurl: ""
 exclude:
   - node_modules
