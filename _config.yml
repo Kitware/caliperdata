@@ -2,6 +2,7 @@ title: CALIPeR
 description: Site description
 url: "https://caliperdata.org"
 baseurl: ""
+
 exclude:
   - node_modules
   - package.json
