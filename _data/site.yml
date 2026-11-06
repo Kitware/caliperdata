@@ -11,7 +11,7 @@ brand:
 cta:
   button:
     label: Contact
-    url: "#"
+    url: "#inquiries"
 navigation:
   - label: Overview
     url: "#overview"
@@ -19,6 +19,8 @@ navigation:
     url: "#difference"
   - label: Releases
     url: "#releases"
+  - label: Contact
+    url: "#inquiries"
   #- label: Citation
   #  url: "#citation"
 footer:

@@ -1,0 +1,199 @@
+<section id="inquiries" class="bg-gradient-to-r from-slate-950 to-blue-950 text-white">
+  <div class="mx-auto grid w-full max-w-5xl gap-12 px-6 py-20 md:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16 lg:px-8">
+    <div>
+      {% if page.inquiries.subheadline %}
+        <p class="eyebrow !mb-3 !text-sky-300">{{ page.inquiries.subheadline | escape }}</p>
+      {% endif %}
+      <h2 class="text-3xl font-bold tracking-tight">{{ page.inquiries.headline | escape }}</h2>
+      {% if page.inquiries.text %}
+        <p class="mt-5 max-w-md text-sm leading-6 text-white/65">{{ page.inquiries.text }}</p>
+      {% endif %}
+      {% if page.inquiries.benefits %}
+      <ul class="mt-7 space-y-3 border-t border-white/10 pt-6 text-xs text-white/70">
+        {% for benefit in page.inquiries.benefits %}
+          <li class="flex items-center gap-3">
+            <span class="flex size-4 shrink-0 items-center justify-center rounded-full bg-sky-600/25 text-[0.6rem] font-bold text-secondary" aria-hidden="true">
+              <i class="ri-check-line"></i>
+            </span>
+            <span>{{ benefit | escape }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+
+    {% assign form = page.inquiries.form %}
+
+    <div data-form-container>
+      <form
+        class="grid gap-x-4 gap-y-4 rounded-lg border border-white/10 bg-[#020d1d]/90 p-6 shadow-panel sm:grid-cols-2"
+        action="{{ form.action | escape }}"
+        method="post"
+        accept-charset="UTF-8"
+        data-request-form
+      >
+        {% for field in form.fields %}
+          {% assign field_id = "request-field-" | append: forloop.index %}
+
+          {% if field.width == "half" %}
+            {% assign field_width = "" %}
+          {% else %}
+            {% assign field_width = "sm:col-span-2" %}
+          {% endif %}
+
+          {% if field.type == "checkbox" %}
+
+            <label
+              class="flex cursor-pointer items-start gap-2 {{ field_width }}"
+              for="{{ field_id }}"
+            >
+              <input
+                id="{{ field_id }}"
+                type="checkbox"
+                class="checkbox checkbox-primary checkbox-xs mt-0.5 rounded-sm"
+                name="{{ field.name | escape }}"
+                value="{{ field.value | escape }}"
+                {% if field.required %}required{% endif %}
+              >
+
+              <span class="text-[0.65rem] leading-5 text-white/60">
+                {{ field.label | escape }}
+
+                {% if field.required %}
+                  <span class="text-red-400" aria-hidden="true">*</span>
+                {% endif %}
+              </span>
+            </label>
+
+          {% else %}
+
+            <label
+              class="block {{ field_width }}"
+              for="{{ field_id }}"
+            >
+              <span class="mb-1.5 block text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-white/55">
+                {{ field.label | escape }}
+
+                {% if field.required %}
+                  <span class="text-red-400" aria-hidden="true">*</span>
+                {% endif %}
+              </span>
+
+              {% case field.type %}
+
+                {% when "textarea" %}
+
+                  <textarea
+                    id="{{ field_id }}"
+                    class="textarea textarea-bordered h-24 w-full resize-y rounded-none border-white/15 bg-slate-800 text-xs leading-5 text-white placeholder:text-white/25 focus:border-sky-800"
+                    name="{{ field.name | escape }}"
+                    {% if field.placeholder %}
+                      placeholder="{{ field.placeholder | escape }}"
+                    {% endif %}
+                    {% if field.required %}required{% endif %}
+                  ></textarea>
+
+                {% when "select" %}
+
+                  <select
+                    id="{{ field_id }}"
+                    class="select select-bordered select-sm w-full rounded-none border-white/15 bg-slate-800 text-xs text-white focus:border-sky-800"
+                    name="{{ field.name | escape }}"
+                    {% if field.required %}required{% endif %}
+                  >
+                    {% if field.placeholder %}
+                      <option value="" selected disabled>
+                        {{ field.placeholder | escape }}
+                      </option>
+                    {% endif %}
+
+                    {% for option in field.options %}
+                      {% assign option_label = option.label | default: option %}
+                      {% assign option_value = option.value | default: option_label %}
+
+                      <option value="{{ option_value | escape }}">
+                        {{ option_label | escape }}
+                      </option>
+                    {% endfor %}
+                  </select>
+
+                {% else %}
+
+                  <input
+                    id="{{ field_id }}"
+                    class="input input-bordered input-sm w-full rounded-none border-white/15 bg-slate-800 text-xs text-white placeholder:text-white/25 focus:border-sky-800"
+                    type="{{ field.type | default: 'text' | escape }}"
+                    name="{{ field.name | escape }}"
+                    {% if field.placeholder %}
+                      placeholder="{{ field.placeholder | escape }}"
+                    {% endif %}
+                    {% if field.autocomplete %}
+                      autocomplete="{{ field.autocomplete | escape }}"
+                    {% endif %}
+                    {% if field.required %}required{% endif %}
+                  >
+
+              {% endcase %}
+            </label>
+
+          {% endif %}
+        {% endfor %}
+
+        <p
+          class="hidden text-sm text-error sm:col-span-2"
+          data-form-error
+          role="alert"
+        >
+          {{ form.error_message
+            | default: "Something went wrong. Please try again."
+            | escape
+          }}
+        </p>
+
+        <button
+          class="btn btn-secondary btn-sm justify-self-start rounded-none sm:col-span-2"
+          type="submit"
+          data-submit-button
+          data-default-label="{{ form.submit_label | escape }}"
+          data-submitting-label="{{ form.submitting_label | default: 'Submitting…' | escape }}"
+        >
+          <span data-button-label>
+            {{ form.submit_label | escape }}
+          </span>
+
+          <span
+            class="loading loading-spinner loading-xs hidden"
+            data-button-spinner
+            aria-hidden="true"
+          ></span>
+        </button>
+      </form>
+
+      <div
+        class="hidden rounded-lg border border-white/10 bg-[#020d1d]/90 p-8 shadow-panel"
+        data-form-success
+        role="status"
+        tabindex="-1"
+      >
+        <div class="flex size-10 items-center justify-center rounded-full bg-primary/15 text-primary">
+          <i
+            class="ri-check-line text-xl"
+            aria-hidden="true"
+          ></i>
+        </div>
+
+        <p class="mt-6 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-primary">
+          {{ form.success.eyebrow | escape }}
+        </p>
+
+        <h3 class="mt-2 text-2xl font-bold text-white">
+          {{ form.success.headline | escape }}
+        </h3>
+
+        <p class="mt-3 max-w-md text-sm leading-6 text-white/60">
+          {{ form.success.text | escape }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

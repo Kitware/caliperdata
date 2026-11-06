@@ -182,5 +182,61 @@ releases:
       url: "https://github.com/Kitware/CALIPeR-Experiments"
       target: "_blank"
 
+# ==================================================
+# INQUIRY FORM
+# ==================================================
+inquiries:
+  subheadline: Inquiries
+  headline: Looking for additional information?
+  text: >-
+    Use this form if you have questions, need additional information, or would like to request a split that is not currently available.
+  benefits:
+    - Ask questions about the data or documentation
+    - Request additional or specialized dataset splits
+  form:
+    # Get "action" by inspecting your google form, searching for "action"
+    # and then copy/pasting the URL (should end in "formResponse").
+
+    action: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-3hHZ1n9i-nU3nQsyyqZOfGCVrmtgNk--F-rFqEFj9szcow/formResponse"
+
+    submit_label: Submit inquiry
+    submitting_label: Submitting…
+    error_message: We could not send your request. Check your connection and try again.
+
+    success:
+      eyebrow: Request received
+      headline: Thanks for your submission
+      text: We have received your request and will be in touch.
+
+    fields:
+      # Get "name" field by inspecting your Google form, searching for "entry."
+      # (include the period for faster searching) and copy/pasting the number.
+
+      - type: text
+        name: entry.1464040265
+        label: Full name
+        autocomplete: name
+        required: true
+        width: half
+
+      - type: email
+        name: entry.1665415076
+        label: Work email
+        autocomplete: email
+        required: true
+        width: half
+
+      - type: text
+        name: entry.303163178
+        label: Organization
+        autocomplete: organization
+        required: false
+        width: full
+
+      - type: textarea
+        name: entry.391722536
+        label: Inquiry
+        required: true
+        width: full
 
 ---
