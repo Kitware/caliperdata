@@ -173,9 +173,9 @@ releases:
     title: Paper Benchmark Code
     text: >-
       A companion GitHub repository is planned for the paper's benchmarking code. This repo includes evaluation protocols, split manifests, baseline configurations, and documentation for the ReID and synthetic imagery experiments. Camera profiles and simulation settings support studies of atmospheric, sensor, and optical degradation.
-    metadata:
-      - icon: ri-time-line
-        text: "Repository Status: To be released"
+    # metadata:
+    #   - icon: ri-time-line
+    #     text: "Repository Status: To be released"
     button:
       text: View on GitHub
       icon: ri-github-line
